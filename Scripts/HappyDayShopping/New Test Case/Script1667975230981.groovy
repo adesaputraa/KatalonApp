@@ -17,23 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('mobileapp/samsung.apk', false)
+Mobile.startApplication('mobileapp\\HappyDayShopping.apk', true)
 
-Mobile.tap(findTestObject('Samsung/buttonSHOP'), 0)
+Mobile.tap(findTestObject('HappyDayShopping/FlashSale-button'), 0)
 
-Mobile.tap(findTestObject('Samsung/buttonPhone'), 0)
+Mobile.delay(10, FailureHandling.STOP_ON_FAILURE)
 
-Mobile.tap(findTestObject('Samsung/buttonSearch'), 0)
+Mobile.tap(findTestObject('HappyDayShopping/product-button'), 0)
 
-Mobile.setText(findTestObject('Samsung/EditTextSearch'), 'Galaxy', 0)
+Mobile.setText(findTestObject('HappyDayShopping/input-quatity'), '2', 0)
 
-Mobile.tap(findTestObject('Samsung/GalaxyZFold4'), 0)
+Mobile.tap(findTestObject('HappyDayShopping/AddToBag-Button'), 0)
 
-Mobile.scrollToText('SPECS', FailureHandling.STOP_ON_FAILURE)
+Mobile.tap(findTestObject('HappyDayShopping/Button-Yourbag'), 0)
 
-Mobile.tap(findTestObject('Samsung/buttonSPECS'), 0)
+Mobile.tap(findTestObject('HappyDayShopping/Button-Checkout'), 0)
 
-Mobile.delay(5, FailureHandling.STOP_ON_FAILURE)
-
-Mobile.tap(findTestObject('Samsung/buttonBuyNow'), 0)
+Mobile.getText(findTestObject('HappyDayShopping/text-assertion-after-checkout'), 0)
 
